@@ -1,14 +1,13 @@
-import 'package:evoli/pages/signUp.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   final _scaffoldKey = GlobalKey();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool hidePassword = true;
@@ -32,7 +31,7 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Login",
+            "Sign Up",
             style: TextStyle(fontSize: 30.0),
           ),
           centerTitle: true,
@@ -72,7 +71,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: [
                           Text(
-                            'Please sign in',
+                            'Create New Account',
                             style: TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.w700,
@@ -160,39 +159,7 @@ class _LoginState extends State<Login> {
                             ),
                             onPressed: () {},
                             child: Text(
-                              "Login",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text('or'),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          TextButton(
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                ),
-                              ),
-                              padding: MaterialStateProperty.all<EdgeInsets>(
-                                  EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 80)),
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.lightBlue.shade900),
-                            ),
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext contex) => SignUp(),
-                              ),
-                            ),
-                            child: Text(
-                              "Sign Up",
+                              "Create",
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
