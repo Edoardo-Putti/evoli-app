@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
+import 'pages/logStud.dart';
 
 void main() {
   runApp(
@@ -134,7 +135,7 @@ class EvoliHome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext contex) => Login(),
+                            builder: (BuildContext contex) => HomeStud(),
                           ),
                         ),
                         child: Column(children: [
