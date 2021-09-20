@@ -1,3 +1,4 @@
+import 'package:evoli/pages/test_login.dart';
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
 import 'pages/logStud.dart';
@@ -29,7 +30,9 @@ void main() {
       //     ),
       //   ),
       // ),
-      theme: ThemeData(scaffoldBackgroundColor: Color.fromRGBO(36, 61, 112, 1)),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromRGBO(36, 61, 112, 1),
+      ),
       home: EvoliHome(),
     ),
   );
@@ -61,62 +64,60 @@ class EvoliHome extends StatelessWidget {
             icon: Icon(
               Icons.menu,
               color: Color.fromRGBO(245, 245, 245, 1),
-              size: 50.0,
+              size: MediaQuery.of(context).size.width * 0.1,
             ),
             onPressed: () => _scaffoldKey.currentState!.openDrawer(),
           ),
           actions: <Widget>[
             Image.asset(
               'images/logo.png',
-              scale: 0.1,
-              height: 100.0,
-              width: 100.0,
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.height * 0.1,
             ),
           ],
           //title: const Text('EVOLI'),
-          toolbarHeight: 120.0,
+          toolbarHeight: MediaQuery.of(context).size.height * 0.1,
         ),
         body: Container(
           child: Column(children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(40.0),
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  clipBehavior: Clip.hardEdge,
-                  child: Text.rich(
-                    TextSpan(
-                      text: 'Welcome to',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 38.0,
-                          color: Color.fromRGBO(245, 245, 245, 1)),
-                      children: [
-                        TextSpan(
-                            text: ' EVOLI \n',
-                            style: TextStyle(
-                                color: Color.fromRGBO(255, 193, 7, 1),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 45.0)),
-                        TextSpan(
-                          text:
-                              '\nA video-tagging tool to collect students\' feedback',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24.0,
-                            color: Color.fromRGBO(245, 245, 245, 1),
-                          ),
+                padding: EdgeInsets.only(left: 40, right: 40, bottom: 0),
+                child: Text.rich(
+                  TextSpan(
+                    text: 'Welcome to',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: MediaQuery.of(context).size.width * 0.15,
+                        color: Color.fromRGBO(245, 245, 245, 1)),
+                    children: [
+                      TextSpan(
+                        text: ' EVOLI \n',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 193, 7, 1),
+                          fontWeight: FontWeight.w900,
+                          fontSize: MediaQuery.of(context).size.width * 0.23,
                         ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
+                      ),
+                      // TextSpan(
+                      //   text:
+                      //       '\nA video-tagging tool to collect\n students\' feedback',
+                      //   style: TextStyle(
+                      //     fontWeight: FontWeight.bold,
+                      //     fontSize: MediaQuery.of(context).size.width * 0.075,
+                      //     color: Color.fromRGBO(245, 245, 245, 1),
+                      //   ),
+                      // ),
+                    ],
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 40.0),
+              padding: EdgeInsets.only(bottom: 60.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Expanded(
                     child: Padding(
@@ -135,7 +136,7 @@ class EvoliHome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext contex) => HomeStud(),
+                            builder: (BuildContext contex) => LoginForm(),
                           ),
                         ),
                         child: Column(children: [

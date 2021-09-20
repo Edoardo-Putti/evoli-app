@@ -40,6 +40,7 @@ class HomeStud extends StatelessWidget {
         ),
         key: _scaffoldKey,
         body: Container(
+          alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -62,25 +63,28 @@ class HomeStud extends StatelessWidget {
                         builder: (BuildContext contex) => HomeStud(),
                       ),
                     ),
-                    child: Column(children: [
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 15.0),
-                        child: Text(
-                          'Log-in',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 28.0,
-                            color: Color.fromRGBO(245, 245, 245, 1),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 15.0),
+                            child: Text(
+                              'Log-in',
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28.0,
+                                color: Color.fromRGBO(245, 245, 245, 1),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Image.asset(
-                        'images/read.png',
-                        fit: BoxFit.fill,
-                        scale: 2.5,
-                      ),
-                    ]),
+                          Image.asset(
+                            'images/read.png',
+                            fit: BoxFit.fill,
+                            scale: 2.5,
+                          ),
+                        ]),
                   ),
                 ),
               ),
