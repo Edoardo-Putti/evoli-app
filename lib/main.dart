@@ -1,7 +1,6 @@
 import 'package:evoli/pages/test_login.dart';
 import 'package:flutter/material.dart';
-import 'pages/logIn/login.dart';
-import 'pages/logStud.dart';
+import 'pages/logIn/login_prof.dart';
 
 void main() {
   runApp(

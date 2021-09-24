@@ -79,7 +79,6 @@ router.post('/signup', (req, res) => {
 
 router.post('/signin', async(req, res) => {
     var conn = mysql.createConnection(dbConfig);
-    //console.log(req)
     if (req.body.email != null && req.body.password != null) {
         var query = 'SELECT * FROM user where email = ?';
         var parameters = [req.body.email];

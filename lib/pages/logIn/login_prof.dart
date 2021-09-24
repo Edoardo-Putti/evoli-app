@@ -2,22 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart' as http;
 
-const SERVER_IP = 'http://localhost:5000';
+const SERVER_IP = 'http://192.168.43.215:3000/user';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   Future<String> _authUser(LoginData data) async {
-    print('Name: ${data.name}, Password: ${data.password}');
-    var res = await http.post(Uri.parse("$SERVER_IP/login"),
-        body: {"username": data.name, "password": data.password});
-    if (res.statusCode == 200) return res.body;
-    return 'fail';
+    var res = await http.post(Uri.parse("$SERVER_IP/signin"), headers: {
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    }, body: {
+      "email": data.name,
+      "password": data.password
+    });
+    if (res.statusCode == 200)
+      return res.body;
+    else
+      return 'fail';
   }
 
   Future<String> _signUp(LoginData data) async {
-    var res = await http.post(Uri.parse('$SERVER_IP/signup'),
-        body: {"username": data.name, "password": data.password});
+    var res = await http.post(Uri.parse('$SERVER_IP/signup'), headers: {
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    }, body: {
+      "email": data.name,
+      "password": data.password
+    });
     return res.body;
   }
 

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'dart:convert' show json, base64, ascii;
 
 import '../main.dart';
 
@@ -23,14 +22,14 @@ class LoginForm extends StatelessWidget {
 
   Future<String> attemptLogIn(String username, String password) async {
     var res = await http.post(Uri.parse("$SERVER_IP/login"),
-        body: {"username": username, "password": password});
+        body: {"email": username, "password": password});
     if (res.statusCode == 200) return res.body;
     return 'fail';
   }
 
   Future<int> attemptSignUp(String username, String password) async {
     var res = await http.post(Uri.parse('$SERVER_IP/signup'),
-        body: {"username": username, "password": password});
+        body: {"email": username, "password": password});
     return res.statusCode;
   }
 
