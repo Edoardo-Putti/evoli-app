@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart' as http;
 
+/*Remember to change ip with the politecnico's ip*/
 const SERVER_IP = 'http://192.168.43.215:3000/user';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginStudent extends StatelessWidget {
+  const LoginStudent({Key? key}) : super(key: key);
 
   Future<String> _authUser(LoginData data) async {
     var res = await http.post(Uri.parse("$SERVER_IP/signin"), headers: {

@@ -1,4 +1,4 @@
-import 'package:evoli/pages/test_login.dart';
+import 'package:evoli/pages/logIn/login_stud.dart';
 import 'package:flutter/material.dart';
 import 'pages/logIn/login_prof.dart';
 
@@ -135,7 +135,7 @@ class EvoliHome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext contex) => LoginForm(),
+                            builder: (BuildContext contex) => LoginStudent(),
                           ),
                         ),
                         child: Column(children: [
@@ -176,7 +176,7 @@ class EvoliHome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext contex) => LoginScreen(),
+                            builder: (BuildContext contex) => LoginProfessor(),
                           ),
                         ),
                         child: Column(children: [
