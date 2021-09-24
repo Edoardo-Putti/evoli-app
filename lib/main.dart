@@ -1,6 +1,6 @@
 import 'package:evoli/pages/test_login.dart';
 import 'package:flutter/material.dart';
-import 'pages/login.dart';
+import 'pages/logIn/login.dart';
 import 'pages/logStud.dart';
 
 void main() {
@@ -177,7 +177,7 @@ class EvoliHome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext contex) => Login(),
+                            builder: (BuildContext contex) => LoginScreen(),
                           ),
                         ),
                         child: Column(children: [
