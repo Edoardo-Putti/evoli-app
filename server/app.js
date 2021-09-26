@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const userRoutes = require('./api/routes/user');
-
+const videoRoutes = require('./api/routes/video');
 
 
 app.use(morgan('dev'));
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 //setup routes here:
 app.use('/user', userRoutes);
-
+app.use('/video', videoRoutes);
 
 //above throw error and whenever an error is throw this method will be triggered
 
