@@ -17,7 +17,7 @@ class LoginStudent extends StatefulWidget {
 }
 
 class _LoginStudentState extends State<LoginStudent> {
-  User _user = User(0, '', '');
+  User _user = User(0, '', '', '');
   Future<String?> _authUser(LoginData data) async {
     var res = await http.post(Uri.parse("$SERVER_IP/signin"), headers: {
       "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -32,6 +32,7 @@ class _LoginStudentState extends State<LoginStudent> {
 
       _user.uid = decRes['userdata']['uid'];
       _user.email = decRes['userdata']['email'];
+      _user.token = decRes['access_token'];
       _user.typology = 'student';
     } else
       //print(decRes);

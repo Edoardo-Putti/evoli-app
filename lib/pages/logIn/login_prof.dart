@@ -17,7 +17,7 @@ class LoginProfessor extends StatefulWidget {
 }
 
 class _LoginProfessorState extends State<LoginProfessor> {
-  User _user = User(0, '', '');
+  User _user = User(0, '', '', '');
 
   Future<String?> _authUser(LoginData data) async {
     var res = await http.post(Uri.parse("$SERVER_IP/signin"), headers: {
@@ -30,6 +30,7 @@ class _LoginProfessorState extends State<LoginProfessor> {
     if (res.statusCode == 200) {
       _user.uid = decRes['userdata']['uid'];
       _user.email = decRes['userdata']['email'];
+      _user.token = decRes['access_token'];
       _user.typology = 'professor';
       return null;
     } else
