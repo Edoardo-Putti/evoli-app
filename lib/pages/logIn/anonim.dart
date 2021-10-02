@@ -17,11 +17,21 @@ class _AnonimState extends State<Anonim> {
         body: Stack(
           children: [
             Background(),
-            Card(
-              color: Colors.white30,
-              child: Row(
-                children: [Text(WordPair.random().asPascalCase)],
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 120,
+                  height: 120,
+                  child: Card(
+                    color: Colors.white30,
+                    child: Row(
+                      children: [Text(WordPair.random().asPascalCase)],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ));
