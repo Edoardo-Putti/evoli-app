@@ -1,13 +1,14 @@
 import 'dart:convert';
 
-import 'package:evoli/main.dart';
 import 'package:evoli/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart' as http;
 
+import '../../evoli.dart';
+
 /*Remember to change ip with the politecnico's ip*/
-const SERVER_IP = 'http://192.168.43.215:3000/user';
+const SERVER_IP = 'http://192.168.1.113:3000/user';
 
 class LoginStudent extends StatefulWidget {
   const LoginStudent({Key? key}) : super(key: key);

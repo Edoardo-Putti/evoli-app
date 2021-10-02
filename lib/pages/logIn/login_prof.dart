@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:evoli/models/user.dart';
 
 /*Remember to change ip with the politecnico's ip (ipconfig)*/
-const SERVER_IP = 'http://192.168.43.215:3000/user';
+const SERVER_IP = 'http://192.168.1.113:3000/user';
 
 class LoginProfessor extends StatefulWidget {
   const LoginProfessor({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class _LoginProfessorState extends State<LoginProfessor> {
     });
     var decRes = jsonDecode(res.body);
     if (res.statusCode == 200) {
-      _user.uid = decRes['userdata']['uid'];
+      _user.uid = decRes['userdata']['uid'] - 3;
       _user.email = decRes['userdata']['email'];
       _user.token = decRes['access_token'];
       _user.typology = 'professor';
@@ -80,7 +80,7 @@ class _LoginProfessorState extends State<LoginProfessor> {
       theme: LoginTheme(
         //primaryColor: Colors.teal,
         titleStyle: TextStyle(
-          fontSize: 80,
+          fontSize: 55,
           fontWeight: FontWeight.bold,
           color: Color.fromRGBO(240, 200, 33, 1),
         ),

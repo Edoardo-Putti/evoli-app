@@ -31,6 +31,10 @@ dependencies:
   google_fonts: ^2.1.0
   flutter_secure_storage: ^4.2.1
   flutter_login: ^2.2.1
+  connectivity_plus: ^1.1.0
+  open_settings:
+  rflutter_alert: ^2.0.4
+  english_words: 
 
 dev_dependencies:
   flutter_test:

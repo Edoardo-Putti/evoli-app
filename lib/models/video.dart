@@ -1,10 +1,10 @@
 class Video {
-  final String vid;
+  final int vid;
   final String title;
   final int duration;
   final String folder;
   final String url;
-  final String uid;
+  final int uid;
   final String videoCode;
   Video(
       {required this.vid,
@@ -16,12 +16,12 @@ class Video {
       required this.videoCode});
   factory Video.fromJson(Map<String, dynamic> video) {
     return Video(
-        vid: video['data']['vid'],
-        title: video['data']['title'],
-        duration: video['data']['duration'],
-        folder: video['data']['folder'],
-        url: video['data']['url'],
-        uid: video['data']['uid'],
-        videoCode: video['videoCode']);
+        vid: video['vid'],
+        title: video['title'],
+        duration: video['duration'],
+        folder: video['folder'],
+        url: video['url'],
+        uid: video['uid'],
+        videoCode: video['video_code']);
   }
 }

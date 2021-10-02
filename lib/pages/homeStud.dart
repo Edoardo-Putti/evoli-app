@@ -1,4 +1,6 @@
+import 'package:evoli/pages/logIn/anonim.dart';
 import 'package:flutter/material.dart';
+import 'package:evoli/pages/logIn/login_stud.dart';
 
 class HomeStud extends StatelessWidget {
   const HomeStud({Key? key}) : super(key: key);
@@ -23,15 +25,15 @@ class HomeStud extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Student Home",
-            style: TextStyle(fontSize: 30.0),
+            "How you prefer to access?",
+            textScaleFactor: 1.25,
           ),
           centerTitle: true,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
               color: Color.fromRGBO(245, 245, 245, 1),
-              size: 50.0,
+              size: 40.0,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -60,7 +62,7 @@ class HomeStud extends StatelessWidget {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext contex) => HomeStud(),
+                        builder: (BuildContext contex) => LoginStudent(),
                       ),
                     ),
                     child: Column(
@@ -104,14 +106,14 @@ class HomeStud extends StatelessWidget {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext contex) => HomeStud(),
+                        builder: (BuildContext contex) => Anonim(),
                       ),
                     ),
                     child: Column(children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 15.0),
                         child: Text(
-                          'Incognito',
+                          'Anonymous',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
